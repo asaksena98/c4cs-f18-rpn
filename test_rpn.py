@@ -21,7 +21,6 @@ class TestBasics(unittest.TestCase):
     	with self.assertRaises(ValueError):
     		result = rpn.calculate('1 2 3 +')
 
-    def test_toomany(self):
-        with self.assertRaises(ValueError):
-            result = rpn.calculate('2 4 ^')
-            self.assertEqual(16, result)
+    def test_exponent(self):
+        result = rpn.calculate('2 2 ^')
+        self.assertEqual(4, result)
